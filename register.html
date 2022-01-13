@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post">
+            <div class="top">
+                <input type="button" value="SIGN IN" id="signin">
+                <input type="button" value="REGISTER" id="register">
+            </div>
+            <div class="middle">
+                <span id="error"></span>
+                <input type="text" name="fname" id="fname" placeholder="First Name" required>
+                <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+                <input type="text" name="address" id="address" placeholder="Address" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="number" name="age" id="age" min="21" max="60" placeholder="Age" required>
+            </div>
+            <input type="submit" value="REGISTER" id="submit">
+        </form>
+    </div>
+    <script src="./script/register.js" type="module" > </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_hnaza7xrWhSOPVNW6CjkU");
+    })();
+    </script>
+</body>
+</html>
