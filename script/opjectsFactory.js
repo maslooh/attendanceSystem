@@ -33,24 +33,6 @@ export function confirmation(_fname,_lname,_address,_age,_email) {
         Email: _email,
     }
 }
-// export function attendance(_userName) {
-//     let attendanceDate = new Date()
-//     let startTime = new Date()
-//     startTime.setHours('8', '30', '00')
-//     let empDelay = msToTime(attendanceDate - startTime)
-//     let fname = valueGetter(_userName, 'Username', 'First Name', "users")
-//     let lname = valueGetter(_userName,'Username','Last Name',"users")
-//     return {
-//         date: attendanceDate.toLocaleDateString(),
-//         "Full Name":`${fname+" "+lname}`,
-//         Username: _userName,
-//         attendance: attendanceDate.toLocaleTimeString(),
-//         departure: '--:--:--',
-//         delay: empDelay,
-//         Status: (empDelay) > "00:30:00" ? "absent by delay" :
-//                 (empDelay) > "00:15:00" ? "late" : "In Time"
-//     }
-// }
 export function attendance2(_userName) {
     let attendanceDate = new Date()
     let fname = valueGetter(_userName, 'Username', 'First Name', "users")

@@ -1,7 +1,9 @@
 import {valueGetter, getIndex, sendEmail,generateRandom, pushToLocalStorage,deleteObj,logout,doesObjectExist,msToTime} from "./generic.js";
 import { tableFromObject,getDailyReport,getMonthlyReport } from "./reports.js";
 import { user,userFromRequist, attendance2} from "./opjectsFactory.js";
-//============================================================
+//====================================================================================
+let menu = document.getElementById("menu")
+let right = document.getElementById("right")
 let currentuser=window.localStorage.getItem('currentuser')
 let logoutbtn = document.getElementById("logout")
 let dailyReportBTn = document.getElementById("dailyReportBtn")
@@ -55,6 +57,18 @@ dailyReportBTn.addEventListener('click', function () {
 monthlyReportBtn.addEventListener("click",function () {
     contentContainer.innerHTML = ``
     contentContainer.appendChild(getMonthlyReport(currentuser))
+})
+right.addEventListener("click", function () {
+    document.body.style.overflowX="scroll"
+    window.scrollTo(document.body.scrollWidth, 0)
+    document.body.style.overflowX="hidden"
+    console.log(document.body.scrollWidth*2)
+})
+menu.addEventListener("click", function () {
+    document.body.style.overflowX="scroll"
+    window.scrollTo(-document.body.scrollWidth, 0)
+    document.body.style.overflowX="hidden"
+    console.log(document.body.scrollWidth*2)
 })
 //=============================end of event listiners===================================================
 function addAllEmp() {
@@ -158,69 +172,4 @@ function getDepartureTime(untill) {
     departureTime.setHours(untill[0], untill[1], untill[2])
     return (departureTime-now)
 }
-
-
-/**this function adds all absent employees at the end of the day */
-// function addAbsentEmp() {
-//     let attendanceList = JSON.parse(window.localStorage.getItem("attendance"))
-//     let employees = JSON.parse(window.localStorage.getItem("users"))
-//     let today = new Date().toLocaleDateString()
-//     employees.forEach(emp => {
-//         let flag=0
-//         attendanceList.forEach(att => {
-//             if (att.date == today && emp.Username == att.Username)
-//                 flag=1
-//         });
-//         if (flag == 0)
-//         {
-//             let newAbsentEmb=
-//         }
-//     });
-    
-// }bad
-
-// empBreifBtn.addEventListener('click', function () {
-//     document.getElementById("content").innerHTML = ''
-//     let userlist = JSON.parse(window.localStorage.getItem("users"))
-//     let table = new tableFromObject(userlist,"Password","Username")
-//     table.appendHeader()
-//     table.appendTable(document.getElementById("content"))
-//     table.appendData()
-//     table.addSorting()
-// })
-
-// allempbtn.addEventListener('click',function () {
-//     document.getElementById("content").innerHTML = ''
-//     let userlist = JSON.parse(window.localStorage.getItem("users"))
-//     let table = new tableFromObject(userlist,"Email","Address","Password","Age","Title  ")
-//     table.appendHeader()
-//     table.appendTable(document.getElementById("content"))
-//     table.appendData()
-//     table.addSorting()
-// })
-// fullBtn.addEventListener("click",function () {
-//     document.getElementById("content").innerHTML = ''
-//     let attendanceList = JSON.parse(window.localStorage.getItem("attendance"))
-//     let table = new tableFromObject(attendanceList)
-//     table.appendHeader()
-//     table.appendTable(document.getElementById("content"))
-//     table.appendData()
-//     table.addSorting()
-// })
-//================================test==================================
-    // let user1 = new attendance('test11')
-    // let user2 = new attendance('test12')
-    // let user3 = new attendance('test13')
-    // let user4 = new attendance('test14')
-    // let user5 = new attendance('test15')
-    // let user6 = new attendance('test16')
-    // let user7 = new attendance('test17')
-    // pushToLocalStorage('attendance', user1)
-    // pushToLocalStorage('attendance', user2)
-    // pushToLocalStorage('attendance', user3)
-    // pushToLocalStorage('attendance', user4)
-    // pushToLocalStorage('attendance', user5)
-    // pushToLocalStorage('attendance', user6)
-    // pushToLocalStorage('attendance', user7)
-
 

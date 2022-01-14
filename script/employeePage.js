@@ -2,6 +2,8 @@ import {valueGetter, getIndex, sendEmail,generateRandom, pushToLocalStorage,dele
 import { tableFromObject,getDailyReport,getMonthlyReport } from "./reports.js";
 import { user,userFromRequist, attendance2} from "./opjectsFactory.js";
 //============================================================
+let menu = document.getElementById("menu")
+let right = document.getElementById("right")
 let currentuser=window.localStorage.getItem('currentuser')
 let logoutbtn = document.getElementById("logout")
 let dailyReportBTn = document.getElementById("dailyReportBtn")
@@ -28,5 +30,17 @@ dailyReportBTn.addEventListener('click', function () {
 monthlyReportBtn.addEventListener("click",function () {
     contentContainer.innerHTML = ``
     contentContainer.appendChild(getMonthlyReport(currentuser))
+})
+right.addEventListener("click", function () {
+    document.body.style.overflowX="scroll"
+    window.scrollTo(document.body.scrollWidth, 0)
+    document.body.style.overflowX="hidden"
+    console.log(document.body.scrollWidth*2)
+})
+menu.addEventListener("click", function () {
+    document.body.style.overflowX="scroll"
+    window.scrollTo(-document.body.scrollWidth, 0)
+    document.body.style.overflowX="hidden"
+    console.log(document.body.scrollWidth*2)
 })
 //=============================end of event listiners===================================================

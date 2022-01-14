@@ -5,6 +5,8 @@ import {
 import { tableFromObject ,getLateReport,getExcuseReport} from "./reports.js";
 import { user,userFromRequist,attendance2} from "./opjectsFactory.js";
 //============================================================
+let menu = document.getElementById("menu")
+let right = document.getElementById("right")
 let currentuser=window.localStorage.getItem('currentuser')
 let contentContainer = document.getElementById("tableBox")
 let logoutbtn = document.getElementById("logout")
@@ -83,6 +85,19 @@ excuseBtn.addEventListener("click",function () {
     contentContainer.innerHTML = ``
     contentContainer.appendChild(getExcuseReport(currentuser))
 })
+
+right.addEventListener("click", function () {
+    document.body.style.overflowX="scroll"
+    window.scrollTo(document.body.scrollWidth, 0)
+    document.body.style.overflowX="hidden"
+    console.log(document.body.scrollWidth*2)
+})
+menu.addEventListener("click", function () {
+    document.body.style.overflowX="scroll"
+    window.scrollTo(-document.body.scrollWidth, 0)
+    document.body.style.overflowX="hidden"
+    console.log(document.body.scrollWidth*2)
+})
 //=============================================================================
 function confirmRequist () {
     let randomUsername = generateRandom(4, "@iti")
@@ -108,20 +123,3 @@ function denyReqist() {
     sendEmail($(this).siblings(".name").text(),requistEmail,message)
     $(this).parent().remove()
 }
-//================================test==================================
-    // let user1 = new attendance('test11')
-    // let user2 = new attendance('test12')
-    // let user3 = new attendance('test13')
-    // let user4 = new attendance('test14')
-    // let user5 = new attendance('test15')
-    // let user6 = new attendance('test16')
-    // let user7 = new attendance('test17')
-    // pushToLocalStorage('attendance', user1)
-    // pushToLocalStorage('attendance', user2)
-    // pushToLocalStorage('attendance', user3)
-    // pushToLocalStorage('attendance', user4)
-    // pushToLocalStorage('attendance', user5)
-    // pushToLocalStorage('attendance', user6)
-    // pushToLocalStorage('attendance', user7)
-
-

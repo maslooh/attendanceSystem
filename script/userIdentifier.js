@@ -8,5 +8,5 @@ export function redirect(value,key="Username") {
     else if (title.toLocaleLowerCase() == "security")
         window.location = "./security.html";
     else
-        window.location = "./home.html";
+        window.location = "./employee.html";
 }
