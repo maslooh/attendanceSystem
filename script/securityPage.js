@@ -58,18 +58,13 @@ monthlyReportBtn.addEventListener("click",function () {
     contentContainer.innerHTML = ``
     contentContainer.appendChild(getMonthlyReport(currentuser))
 })
-right.addEventListener("click", function () {
-    document.body.style.overflowX="scroll"
-    window.scrollTo(document.body.scrollWidth, 0)
-    document.body.style.overflowX="hidden"
-    console.log(document.body.scrollWidth*2)
+right.addEventListener("click", function() {
+  setTimeout(document.body.scrollTo(window.innerWidth, 0), 100)
 })
-menu.addEventListener("click", function () {
-    document.body.style.overflowX="scroll"
-    window.scrollTo(-document.body.scrollWidth, 0)
-    document.body.style.overflowX="hidden"
-    console.log(document.body.scrollWidth*2)
+menu.addEventListener("click", function() {
+  setTimeout(document.body.scrollTo(-window.innerWidth, 0), 100)
 })
+//
 //=============================end of event listiners===================================================
 function addAllEmp() {
     let employees = JSON.parse(window.localStorage.getItem("users"))

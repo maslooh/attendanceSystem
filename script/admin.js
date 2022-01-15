@@ -87,18 +87,15 @@ excuseBtn.addEventListener("click",function () {
 })
 
 right.addEventListener("click", function () {
-    document.body.style.overflowX="scroll"
-    window.scrollTo(document.body.scrollWidth, 0)
-    document.body.style.overflowX="hidden"
-    console.log(document.body.scrollWidth*2)
+
+    setTimeout(document.body.scrollTo(window.innerWidth,0),100)
+
 })
 menu.addEventListener("click", function () {
-    document.body.style.overflowX="scroll"
-    window.scrollTo(-document.body.scrollWidth, 0)
-    document.body.style.overflowX="hidden"
-    console.log(document.body.scrollWidth*2)
+    setTimeout(document.body.scrollTo(-window.innerWidth,0),100)
 })
-//=============================================================================
+//
+//============================================================================
 function confirmRequist () {
     let randomUsername = generateRandom(4, "@iti")
     let randomPassword = generateRandom(8)
