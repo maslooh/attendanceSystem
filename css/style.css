@@ -27,18 +27,30 @@ i {
   grid-area: header;
   background-color: white;
   display: flex;
-  flex-wrap: wrap;
-  justify-items: flex-start;
   color: #ff8317;
   align-items: center;
   border-bottom: 1px solid #ff831744;
 }
-.header div {
+.headerBtns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: flex-start;
+  color: #ff8317;
+  align-items: center;
+}
+header #menu {
+  margin-left: 15px;
+  color: #ff8317;
+  font-size: 20px;
+  top: 10px;
+  display: none;
+}
+.header div div {
   margin-left: 15px;
   padding: 5px;
   font-weight: 500;
 }
-.header div:not(#logout):hover {
+.header div div:not(#logout):hover {
   border-radius: 5px;
   background: #e9760326;
   cursor: pointer;
@@ -151,14 +163,7 @@ header #logout:hover {
   align-items: center;
   text-transform: none;
 }
-.content #menu {
-  align-self: flex-start;
-  margin-bottom: 20px;
-  color: #ff8317;
-  font-size: 20px;
-  top: 10px;
-  display: none;
-}
+
 #content td {
   border: 1px solid #ff6600c4;
   width: 150px;
@@ -248,7 +253,7 @@ header #logout:hover {
   .aside #right {
     display: block;
   }
-  #content #menu {
+  header #menu {
     display: block;
   }
 }
