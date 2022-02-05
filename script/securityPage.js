@@ -19,7 +19,9 @@ let attendancePgContent =`<div id='attendanceBox'>
                         </div>`
 //==================================event listeners==================================================
 window.addEventListener("load", function () {
+    document.body.scrollTo(window.innerWidth, 0)
     attendancePgBtn.click()
+//setting the attendance table for only one time in a day*************
     let today=new Date()
     let attendanceList = JSON.parse(window.localStorage.getItem("attendance"))
     let flag=0

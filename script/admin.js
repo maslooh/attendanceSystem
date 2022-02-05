@@ -18,6 +18,7 @@ let empBreifBtn = document.getElementById("employee-brief")
 //============================================================
 
 window.addEventListener("load", function () {
+    document.body.scrollTo(window.innerWidth,0)
     //adding confirmation requists to admin page===================================
     let confirmList = JSON.parse(window.localStorage.getItem("confirmation"))
     for (let i in confirmList) {

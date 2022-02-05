@@ -27,6 +27,7 @@ i {
   grid-area: header;
   background-color: white;
   display: flex;
+  justify-content: space-between;
   color: #ff8317;
   align-items: center;
   border-bottom: 1px solid #ff831744;
@@ -34,12 +35,11 @@ i {
 .headerBtns {
   display: flex;
   flex-wrap: wrap;
-  justify-items: flex-start;
   color: #ff8317;
   align-items: center;
 }
 header #menu {
-  margin-left: 15px;
+  margin: 0px 15px;
   color: #ff8317;
   font-size: 20px;
   top: 10px;

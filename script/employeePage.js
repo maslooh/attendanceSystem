@@ -11,7 +11,8 @@ let monthlyReportBtn = document.getElementById("monthlyReportBtn")
 let contentContainer = document.getElementById("tableBox")
 //==================================event listeners==================================================
 window.addEventListener("load", function () {
-//adding user name and title to the page===================================================
+    document.body.scrollTo(window.innerWidth,0)
+//adding user name and title to the page==============
     let currentuser=window.localStorage.getItem("currentuser")
     let name = valueGetter(currentuser, "Username", "First Name", "users")
                 +" "+ valueGetter(currentuser, "Username", "Last Name", "users")
